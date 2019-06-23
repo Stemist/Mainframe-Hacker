@@ -1,8 +1,10 @@
+'''A tiny little program that spits out technobabble. It would be fun to continue adding to it to make it more and more awesome.'''
 
 import json
 import random
 import os
 import time
+
 
 def extract_json_data():
     try:
@@ -25,4 +27,5 @@ def main():
         time.sleep(0.2)
 
 
-main()
+if __name__ == "__main__":
+    main()
