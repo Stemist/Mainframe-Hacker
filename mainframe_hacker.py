@@ -34,12 +34,16 @@ def main():
     # Load .json and other data files into program.
     boot_data = extract_json_data(boot_file)
     mainframe_data = extract_json_data(mainframe_file)
+    
+    # Shuffle the data
+    shuffle(boot_data)
+    shuffle(mainframe_data)
 
     # Display the boot sequence.
-    print_messages_with_time_gaps(shuffle(boot_data), time_standard)
+    print_messages_with_time_gaps(boot_data, time_standard)
 
     # Display hacking messages.
-    print_messages_with_time_gaps(shuffle(mainframe_data), time_standard)
+    print_messages_with_time_gaps(mainframe_data, time_standard)
 
 
 if __name__ == "__main__":
