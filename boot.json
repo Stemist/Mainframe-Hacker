@@ -1,0 +1,19 @@
+[
+"INIT: Entering next runlevel",
+"usb: New usb device found, idVendor=1d6b, idProduct=0002",
+"Initializing MAC address",
+"UDP hash table entries: 256 (order: 0, 4896 bytes)",
+"TCP connection: established",
+"NET: Registered protocol family 1",
+"usbcore: registered new interface driver usbfs",
+"PINMUX9 (0x00000024) = 0x08000000 -> 0x08800000",
+"bio: create slab <bio-0> at 0",
+"SCSI subsystem initialized",
+"io scheduler noop registered (default)",
+"TCP cubic registered",
+"Determining root device...",
+"Determining looptype...",
+"Mounting squashfs filesystem",
+"Coping read-write image contents to tmpfs",
+"No cdupdate.sh script found, skipping..."
+]

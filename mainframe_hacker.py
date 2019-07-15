@@ -1,30 +1,45 @@
-'''A tiny little program that spits out technobabble. It would be fun to continue adding to it to make it more and more awesome.'''
+"""A little program that spits out technobabble. It would be fun to continue adding to it to make it more and more awesome."""
 
 import json
 import random
 import os
 import time
 
+boot_file = "boot.json"
+mainframe_file = "mainframe.json"
 
-def extract_json_data():
+time_standard = 0.2
+
+
+def extract_json_data(file):
     try:
-        stored_data = json.loads(open("mainframe_data.json").read())
-        return stored_data
+        return json.loads(open(file).read())
 
     except:
         print("File error: json file not found.")
 
-def main():
-    #Extract data from file.
-    kernel_messages = extract_json_data()
-    
-    # Randomize and shuffle the messages.
-    random.seed = (os.urandom(1024))
-    random.shuffle(kernel_messages)
-    
-    for message in kernel_messages:
+
+def print_messages_with_time_gaps(messages, t):
+    for message in messages:
         print(message)
-        time.sleep(0.2)
+        time.sleep(t)
+
+
+def shuffle(data):
+    random.seed = os.urandom(1024)
+    return random.shuffle(data)
+
+
+def main():
+    # Load .json and other data files into program.
+    boot_data = extract_json_data(boot_file)
+    mainframe_data = extract_json_data(mainframe_file)
+
+    # Display the boot sequence.
+    print_messages_with_time_gaps(shuffle(boot_data), time_standard)
+
+    # Display hacking messages.
+    print_messages_with_time_gaps(shuffle(mainframe_data), time_standard)
 
 
 if __name__ == "__main__":
